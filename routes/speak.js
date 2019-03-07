@@ -19,3 +19,5 @@ router.post('/', function (req, res) {
         setTimeout(function() { conn.close(); process.exit(0) }, 500);
     });
 });
+
+module.exports = router;
