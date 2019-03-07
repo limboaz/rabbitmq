@@ -20,8 +20,8 @@ router.post('/', function (req, res) {
                 });
 
                 ch.consume(q.queue, function(msg) {
-                    res.send(msg);
-                    return;
+                    res.json(msg);
+
                 }, {noAck: true});
             });
         });
