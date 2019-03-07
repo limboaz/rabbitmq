@@ -21,6 +21,7 @@ router.post('/', function (req, res) {
 
                 ch.consume(q.queue, function(msg) {
                     res.send(msg);
+                    return;
                 }, {noAck: true});
             });
         });
