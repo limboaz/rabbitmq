@@ -21,9 +21,11 @@ router.post('/', function (req, res) {
 
                 ch.consume(q.queue, function(msg) {
                     res.json(msg);
+                    conn.close();
                 });
             });
         });
+
     });
 
 });
