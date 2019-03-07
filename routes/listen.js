@@ -20,7 +20,7 @@ router.post('/', function (req, res) {
                 });
 
                 ch.consume(q.queue, function(msg) {
-                    res.json(msg);
+                    res.json({msg: msg.content.toString()});
                     conn.close();
                 });
             });
