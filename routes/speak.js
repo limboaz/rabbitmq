@@ -15,8 +15,8 @@ router.post('/', function (req, res) {
             ch.publish(ex, severity, new Buffer(msg));
             console.log(" [x] Sent %s: '%s'", severity, msg);
         });
-
-        setTimeout(function() { conn.close(); process.exit(0) }, 500);
+        res.json({status: "OK"});
+        setTimeout(function() { conn.close(); }, 500);
     });
 });
 
